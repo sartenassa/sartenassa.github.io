@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Preguntes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Site Description Here" />
+<style>
+.boto{
+display: inline-block;
+background: url("fonsbot.png") no-repeat scroll 0 transparent;
+height:180px;
+width:200px;
+border:white;
+text-decoration:none;
+padding-top:2px;
+margin-top:2px;
+padding-right:10px;
+padding-left:6px;
+font-family:'Arial';color: black;
+font-size:98%;
+} 
+    </style>
+</head>
+<script>
+
+var respostes0 = ["prismàtics, telescopis, equips de busseig, lupa i microscopi",
+"prismàtics, caleidoscopis, equips de busseig, lupa i microscopi",
+"guies de camp i diccionari visual"]; 
+var respostes1 = ["pluricel·lularsi i unicel·lulars",
+"microscopis i macroscopis",
+"animals i plantes"]; 
+var respostes2 = ["Són els formats per una sola cèl·lula i només es poden vore amb microscopi.",
+"Són els formats per una sola cèl·lula i es poden vore a simple vista.","Són els bacteris i causen moltes malalties."]
+var respostes3 = ["Són els formats per un gran nombre de cèl·lules. La majoria poden vore’s a simple vista.",
+"Són els formats per una sola cèl·lula i només es poden vore amb microscopi.",
+"Són els formats per un gran nombre de cèl·lules molt xicotetes i senzilles."];
+var respostes4 = ["Pluricel·lulars",
+"Unicel·lulars",
+"Poden ser pluricel·lulars o unicel·lulars"]; 
+var respostes5 = ["Un ésser unicel·lular està format per una única cèl·lula.",
+"Els organismes pluricel·lulars només poden ser vistos amb microscopi.",
+"Alguns organismes pluricel·lulars estan formats per una única cèl·lula."];
+var respostes6 = ["Només les cèl·lules dels organismes pluricel·lulars duen a cap les tres funcions vitals.",
+"Els animals i les plantes són organismes pluricel·lulars.",
+"Tots els éssers vius estan formats per cèl·lules."];
+var respostes7 = ["Plantes i alguns bacteris i protoctists.",
+"Plantes, bacteris i fongs.",
+"Plantes, fongs i algues."];
+var respostes8 = ["Bacteris i protoctists.",
+"Plantes i alguns bacteris i protoctists.",
+"Alguns bacteris i protozous."];
+var respostes9 = ["Animals i fongs.",
+"Bacteris, protoctists i animals.",
+"Animals i vegetals."];
+var respostes10 = ["No poden desplaçar-se i amb els animals que s'alimenten d'altres éssers vius.",
+"Fabriquen el seu aliment i, com els animals, s'alimenten d'altres éssers vius.",
+"Són tots pluricel·lulars i, com els animals, s'alimenten d'altres éssers vius."];
+var respostes11 = ["Protozous i algues.",
+"Fongs amb bolets i floridures.",
+"Algues, fongs i plantes."];
+var respostes12 = ["S'alimenten d'altres éssers vius.",
+"Són pluricel·lulars",
+"Fabriquen el seu aliment i es desplacen."];
+var respostes13 = ["Poden ser pluricel·lulars o unicel·lulars.",
+"Són sempre pluricel·lulars",
+"Són sempre unicel·lulars"];
+var respostes14 = ["Fabriquen el seu aliment i no es desplacen.",
+"Són pluricel·lulars.",
+"Poden fer moltes flors."];
+var respostes15 = ["Unicel·lulars.",
+"Pluricel·lulars.",
+"Amics."];
+var respostes16 = ["La cèl·lula que forma els bacteris és gran i complexa.",
+"Els bacteris poden viure dins d'altres éssers vius.",
+"Els bacteris són tots unicel·lulars."];
+var respostes17 = ["són fongs pluricel·lulars.",
+"són fongs unicel·lulars.",
+"fabriquen el seu aliment."];
+
+
+var respostes = [respostes0,respostes1,respostes2,respostes3,respostes4,respostes5,respostes6,respostes7,respostes8,respostes9,respostes10,respostes11,respostes12,respostes13,respostes14,respostes15,respostes16,respostes17];
+var nom="";
+var preguntes = ["Assenyala els objectes que serveixen per observar els éssers vius:",
+"Com poden ser els éssers vius segons el nombre de cèl·lules?",
+"Què són els éssers vius unicel·lulars?",
+"Què són els éssers vius pluricel·lulars?",
+"Com són els animals i les plantes segons el nombre de cèl·lules?",
+"Assenyala la verdadera:",
+"Indica la FALSA:",
+"Quins regnes fabriquen el seu propi aliment?",
+"Alguns fabriquen el seu propi aliment i altres no:",
+"No fabriquen el seu propi aliment:",
+"Quina semblança tenen els fongs amb les plantes? I amb els animals?",
+"Quins dos tipus d'éssers vius inclou el regne dels protoctists?",
+"En què s'assemblen els protozous als animals?",
+"Com són les algues segons el nombre de cèl·lules?",
+"En què s'assemblen les algues a les plantes?",
+"Els bacteris són tots...",
+"Quina és falsa?",
+"Els fongs amb bolets i floridures..."];
+
+var i=0;
+var turno=0;
+var turnoest=0;
+
+function aleatorio() {
+
+document.getElementById("acierta").style.backgroundSize = "auto";
+document.getElementById("acierta").style.backgroundImage="";
+document.getElementById("nexti").style.visibility="hidden";
+document.getElementById("aplaude").src ="";
+
+document.getElementById("acierta").innerHTML=preguntes[0];
+document.getElementById("invisible2").innerHTML=preguntes[0];
+
+var nom=respostes[0][0];
+var nom2=respostes[0][1];
+var nom3=respostes[0][2];
+document.getElementById("invisible").innerHTML = nom;
+var orde = Math.floor((Math.random() * 5) + 1);
+if(orde==1){
+document.getElementById("link1").innerHTML = nom;
+document.getElementById("link2").innerHTML = nom2;
+document.getElementById("link3").innerHTML = nom3;
+}
+if(orde==2){
+
+document.getElementById("link1").innerHTML = nom2;
+document.getElementById("link2").innerHTML = nom;
+document.getElementById("link3").innerHTML = nom3;
+}
+if(orde==3){
+document.getElementById("link1").innerHTML = nom3;
+document.getElementById("link2").innerHTML = nom2;
+document.getElementById("link3").innerHTML = nom;
+}
+if(orde==4){
+document.getElementById("link1").innerHTML = nom2;
+document.getElementById("link2").innerHTML = nom;
+document.getElementById("link3").innerHTML = nom3;
+}
+if(orde==5){
+document.getElementById("link1").innerHTML = nom3;
+document.getElementById("link2").innerHTML = nom2;
+document.getElementById("link3").innerHTML = nom;
+}
+
+}
+
+
+function aleatorio2() {
+document.getElementById("acierta").style.backgroundImage="";
+document.getElementById("acierta").style.backgroundSize = "auto";
+document.getElementById("nexti").style.visibility="hidden";
+document.getElementById("aplaude").src ="";
+
+for (i = 0; i < preguntes.length; i++) {
+if(document.getElementById("invisible2").innerHTML==preguntes[i]){
+turno=i+1;
+}
+}
+
+
+if(turno==preguntes.length){
+turno=0;
+
+}
+
+
+document.getElementById("acierta").innerHTML=preguntes[turno];
+document.getElementById("invisible2").innerHTML=preguntes[turno];
+
+var nom=respostes[turno][0];
+var nom2=respostes[turno][1];
+var nom3=respostes[turno][2];
+document.getElementById("invisible").innerHTML = nom;
+var orde = Math.floor((Math.random() * 3) + 1);
+if(orde==1){
+document.getElementById("link1").innerHTML = nom;
+document.getElementById("link2").innerHTML = nom2;
+document.getElementById("link3").innerHTML = nom3;
+}
+if(orde==2){
+document.getElementById("link1").innerHTML = nom2;
+document.getElementById("link2").innerHTML = nom;
+document.getElementById("link3").innerHTML = nom3;
+}
+if(orde==3){
+document.getElementById("link1").innerHTML = nom3;
+document.getElementById("link2").innerHTML = nom2;
+document.getElementById("link3").innerHTML = nom;
+}
+
+}
+
+
+function adivina(e) {
+
+if(document.getElementById(e.id).innerHTML == document.getElementById("invisible").innerHTML){
+document.getElementById("invisible2").innerHTML=document.getElementById("acierta").innerHTML;
+
+var imatge= Math.floor((Math.random() * 7) + 1);
+if(imatge==1){
+document.getElementById("acierta").style.backgroundImage="url('yes.gif')";
+}
+if(imatge==2){
+document.getElementById("acierta").style.backgroundImage="url('yes2.gif')";
+}
+if(imatge==3){
+document.getElementById("acierta").style.backgroundImage="url('yes1.gif')";
+}
+if(imatge==4){
+document.getElementById("acierta").style.backgroundImage="url('yes3.gif')";
+}
+if(imatge==5){
+document.getElementById("acierta").style.backgroundImage="url('yes4.gif')";
+}
+if(imatge==6){
+document.getElementById("acierta").style.backgroundImage="url('yes5.gif')";
+}
+if(imatge==7){
+document.getElementById("acierta").style.backgroundImage="url('yes6.gif')";
+}
+
+turnoest=turno+1;
+
+var est="estrella"+ turnoest;
+document.getElementById(est).style.opacity=1;
+//document.getElementById('estrella3').style.opacity=1;
+document.getElementById("acierta").style.backgroundRepeat = "no-repeat";
+document.getElementById("acierta").style.backgroundSize = "auto";
+
+document.getElementById("nexti").style.visibility="visible";
+document.getElementById("aplaude").src ="aplaude.mp3";
+
+}else{
+
+
+var imatgeErr= Math.floor((Math.random() * 7) + 1);
+if(imatgeErr==1){
+document.getElementById("acierta").style.backgroundImage="url('no.gif')";
+}
+if(imatgeErr==2){
+document.getElementById("acierta").style.backgroundImage="url('no1.gif')";
+}
+if(imatgeErr==3){
+document.getElementById("acierta").style.backgroundImage="url('no2.gif')";
+}
+if(imatgeErr==4){
+document.getElementById("acierta").style.backgroundImage="url('no3.gif')";
+}
+if(imatgeErr==5){
+document.getElementById("acierta").style.backgroundImage="url('no4.gif')";
+}
+if(imatgeErr==6){
+document.getElementById("acierta").style.backgroundImage="url('no5.gif')";
+}
+if(imatgeErr==7){
+document.getElementById("acierta").style.backgroundImage="url('no6.gif')";
+}
+
+
+document.getElementById("acierta").style.backgroundRepeat = "no-repeat";
+//document.getElementById("acierta").style.backgroundSize = "65%";
+}   
+}
+</script>
+<body onload="aleatorio();" style="background-image: url('plants.jpg');background-size:76%;background-repeat: no-repeat;">
+
+<div style="height:500px;width:90%;z-index:-1;position: absolute;
+padding: 20px 20px 20px 20px;margin: 20px 0px 20px 0px;">
+<div style="height:500px;width:50%;z-index:-1;float: left;position: relative;
+padding: 0px 20px 20px 20px;margin: 0px 0px 20px 0px;">
+<img src='round.png' id="imagen" width='400' height='30%' alt='' 
+style="opacity: 1;margin: 10px 20px 0px 30px;" /></div>
+
+
+<audio id="aplaude" src="" autoplay></audio>
+<div id="acierta" style="font-family:'Arial';color: black;font-size: 20px;
+position:absolute;height:500px;width:25%;z-index:1;float:left;padding: 10px 0px 20px 90px;
+margin: 40px 0px 20px 0px;background-size:auto;
+background-position: center;background-image: url('round.png');"></div>
+
+<div style="position:relative;height:500px;width:30%;z-index:-1;float:right;">
+
+<br/>
+
+<button id="link1" class="boto" onclick="return adivina(this);"></button><br/>
+<button id="link2" class="boto" onclick="return adivina(this);"></button><br/>
+<button id="link3" class="boto" onclick="return adivina(this);"></button><br/>
+<button id="nexti" style="height:110px;width:110px;visibility:hidden;border: none;background:url('next.png');color: transparent;" onclick="aleatorio2();">
+</button>
+</div>
+
+<div style="position:absolute;height:400px;width:10%;z-index:-1;right:1%;">
+<img src='estrella15.png' id="estrella9" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella1.png' id="estrella18" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella14.png' id="estrella8" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella17.png' id="estrella17" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella13.png' id="estrella7" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella16.png' id="estrella16" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella6.png' id="estrella6" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella12.png' id="estrella15" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella5.png' id="estrella5" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella11.png' id="estrella14" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella4.png' id="estrella4" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella10.png' id="estrella13" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella3.png' id="estrella3" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella9.png' id="estrella12" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella2.png' id="estrella2" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella8.png' id="estrella11" width='40%' alt='' style="opacity: 0.1;" />
+<img src='estrella1.png' id="estrella1" width='40%' alt='' style="opacity: 0.1;" /><img src='estrella7.png' id="estrella10" width='40%' alt='' style="opacity: 0.1;" />
+</div>
+
+
+<br/>
+
+
+<button id="invisible2" style="visibility:hidden"></button>
+<button id="invisible" style="visibility:hidden"></button>
+</div>
+</div>
+</body>
+</html>
